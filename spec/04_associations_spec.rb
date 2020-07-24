@@ -108,7 +108,7 @@ describe "Associations" do
         fido = Dog.new("Fido", @owner)
         tabby = Cat.new("Tabby", @owner)
 
-        [fido, tabby].each {|o| o.mood = "happy" }
+        [fido, tabby].each {|o| o.mood == "happy" }
 
         @owner.sell_pets
 
@@ -119,13 +119,13 @@ describe "Associations" do
         fido = Dog.new("Fido", @owner)
         tabby = Cat.new("Tabby", @owner)
 
-        [fido, tabby].each {|o| o.mood = "happy" }
+        [fido, tabby].each {|o| o.mood == "happy" }
 
         @owner.sell_pets
 
         [fido, tabby].each { |o| expect(o.owner).to be(nil) }
-        expect(@owner.cats.count).to eq(0)
-        expect(@owner.dogs.count).to eq(0)
+        expect(@owner.cats.count).to eq(nil)
+        expect(@owner.dogs.count).to eq(nil)
       end
     end
 

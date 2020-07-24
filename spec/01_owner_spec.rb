@@ -14,7 +14,7 @@ describe Owner do
       end
 
       it "cannot change owner's name" do
-        expect { @owner.name = "Beckham" }.to raise_error NoMethodError
+        expect { @owner.name"Beckham" }.to raise_error NoMethodError
       end
     end
 
